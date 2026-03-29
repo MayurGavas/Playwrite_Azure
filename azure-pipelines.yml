@@ -13,7 +13,7 @@ pool:
 parameters:
 - name : suite
   displayName : Select Suite
-  type: String
+  type: string
   default: smoke
   values: 
     - smoke
