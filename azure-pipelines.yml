@@ -10,6 +10,16 @@ pool:
   #vmImage: ubuntu-latest
   name: Default
 
+paramaters:
+- name : suite
+  displayName : Select Suite
+  type: String
+  default: smoke
+  values: 
+    - smoke
+    - sanity
+    - regression
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -22,3 +32,7 @@ steps:
   displayName: Install Playwright browsers
 - script: npm run build
   displayName: Run Playwright test
+- script: npm run test:${{ parameters.suite }}
+  displayName: Run selected suite
+
+  

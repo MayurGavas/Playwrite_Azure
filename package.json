@@ -7,6 +7,9 @@
     "@types/node": "^25.5.0"
   },
   "scripts": { 
-    "build" : "npx playwright test"
+    "build" : "npx playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:sanity": "playwright test --grep @sanity",
+    "test:regression": "playwright test --grep @regression"
   }
 }
