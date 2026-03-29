@@ -20,5 +20,5 @@ steps:
   displayName: 'npm install and build'
 - script: npx playwright install
   displayName: Install Playwright browsers
-- sccript: npm run build
+- script: npm run build
   displayName: Run Playwright test
