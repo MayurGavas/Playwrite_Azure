@@ -19,6 +19,14 @@ parameters:
     - smoke
     - sanity
     - regression
+- name: env
+  displayName: Select Environment
+  type: string
+  default: qa
+  values:
+    - qa
+    - stage
+    - prod
 
 steps:
 - task: NodeTool@0
@@ -30,8 +38,10 @@ steps:
   displayName: 'npm install and build'
 - script: npx playwright install
   displayName: Install Playwright browsers
-- script: npm run build
-  displayName: Run Playwright test
-- script: npm run test:${{ parameters.suite }}
-  displayName: Run selected suite
-
+#- script: npm run build
+#  displayName: Run Playwright test
+#- script: npm run test:${{ parameters.suite }}
+#  displayName: Run selected suite
+- script: |
+    npm run test:${{ parameters.suite }}:${{ parameters.env }}
+  displayName: Run tests with env

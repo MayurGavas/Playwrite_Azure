@@ -10,6 +10,18 @@
     "build" : "npx playwright test",
     "test:smoke": "playwright test --grep @smoke",
     "test:sanity": "playwright test --grep @sanity",
-    "test:regression": "playwright test --grep @regression"
+    "test:regression": "playwright test --grep @regression",
+
+    "test:smoke:qa": "ENV=qa playwright test --grep @smoke",
+    "test:smoke:sanity": "ENV=uat playwright test --grep @smoke",
+    "test:smoke:prod": "ENV=prod playwright test --grep @smoke",
+
+    "test:sanity:qa": "ENV=qa playwright test --grep @sanity",
+    "test:sanity:sanity": "ENV=uat playwright test --grep @sanity",
+    "test:sanity:prod": "ENV=prod playwright test --grep @sanity",
+
+    "test:regression:qa": "ENV=qa playwright test --grep @regression",
+    "test:regression:sanity": "ENV=uat playwright test --grep @regression",
+    "test:regression:prod": "ENV=prod playwright test --grep @regression"
   }
 }
