@@ -10,7 +10,7 @@ pool:
   #vmImage: ubuntu-latest
   name: Default
 
-paramaters:
+parameters:
 - name : suite
   displayName : Select Suite
   type: String
@@ -35,4 +35,3 @@ steps:
 - script: npm run test:${{ parameters.suite }}
   displayName: Run selected suite
 
-  
